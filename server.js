@@ -11,19 +11,25 @@ app.use(express.urlencoded({ extended: true }));
 // 3: Views code
 app.set("views", "views");
 app.set("view engine", "ejs");
-// 4: Touting code
+// 4: Routing code
+// app.get("/", function (req, res) {
+//   res.end(`<h1 style="background:red">HELLO WORLD by BekzodAli</h1>`);
+// });
+
+// app.get("/hello", function (req, res) {
+//   res.end(`<h1 style="background:red">Hi my name is JONY</h1>`);
+// });
+
+// app.get("/gift", function (req, res) {
+//   res.end("<h1>Siz sovgalar bo'limidasiz</h1>");
+// });
+app.post("/create-item", (req, res) => {
+  console.log(req);
+  res.json({ test: "success" });
+});
 app.get("/", function (req, res) {
-  res.end(`<h1 style="background:red">HELLO WORLD by BekzodAli</h1>`);
+  res.render("harid");
 });
-
-app.get("/hello", function (req, res) {
-  res.end(`<h1 style="background:red">Hi my name is JONY</h1>`);
-});
-
-app.get("/gift", function (req, res) {
-  res.end("<h1>Siz sovgalar bo'limidasiz</h1>");
-});
-
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
