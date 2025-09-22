@@ -1,10 +1,10 @@
 {
-  "name": "Odiljon",
+  "name": "Marcos",
   "profession": "Software Engineer",
   "age": 21,
   "residence": "S.Korea",
   "adress": "S.Korea.Daegu",
-  "languages": ["uzbek", "Korean", "English"],
+  "languages": ["Uzbek", "Korean", "English"],
   "skills": ["Html", "Css", "Js", "NodeJS", "Python"],
   "extra_skills": [
     "Bootstrap, Materialize",

@@ -1,0 +1,148 @@
+.left_frame {
+  display: flex;
+  justify-content: center;
+  width: 305px;
+  height: 1315px;
+  background-color: white;
+  border: 1px solid wheat;
+}
+.container {
+  width: 260px;
+  height: 100%;
+}
+
+.top_frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 47px;
+}
+
+.top_frame_name {
+  margin-top: 27px;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.top_frame_work {
+  margin-top: 6px;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.top_frame_iconbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+  margin-bottom: 54px;
+}
+
+.top_frame_iconbox .top_frame_iconbox_circle {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffb400;
+}
+
+.top_frame_iconbox .top_frame_iconbox_circle img {
+  position: relative;
+  display: flex;
+  width: 20px;
+  height: 20px;
+}
+
+.divider {
+  position: relative;
+  background-color: #f0f0f6;
+  width: 240px;
+  height: 2px;
+}
+
+.about_frame {
+  display: flex;
+  flex-direction: column;
+
+  /* margin-top: 15px; */
+}
+.about_frame_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.about_text {
+  font-size: large;
+  background-color: #ffb400;
+}
+.about_text_right_green {
+  color: #7eb942;
+}
+
+.language-section {
+  max-width: 400px;
+  margin: auto;
+}
+
+.language-section h5 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.language {
+  margin-bottom: 25px;
+}
+
+.language .name,
+.language .percent {
+  display: inline-block;
+  font-size: 16px;
+  color: #666;
+}
+
+.language .name {
+  float: left;
+}
+
+.language .percent {
+  float: right;
+}
+
+.language .bar {
+  clear: both;
+  height: 6px;
+  margin-top: 6px;
+  border: 1px solid #f7b500;
+  border-radius: 10px;
+  position: relative;
+}
+
+.language .fill {
+  margin-top: 1px;
+  height: 2px;
+  background-color: #f7b500;
+  border-radius: 10px;
+}
+
+.divider {
+  position: relative;
+  background-color: #f0f0f6;
+  width: 240px;
+  height: 2px;
+}
