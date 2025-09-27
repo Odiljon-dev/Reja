@@ -28,7 +28,7 @@ const list = [
 //     }, 1000);
 //     setTimeout(function () {
 //       callback(null, list[5]);
-//     }, 5000);
+//     },);
 //   }
 // }
 
