@@ -124,3 +124,61 @@ function stringHisob(string) {
 }
 
 console.log(stringHisob("j0kx3v4v8vc2bv6vj9")); //log qilib funksiyani chaqirdim keyin natijani consolega chiqardim
+
+////////////////////////////////////////////////////////////
+//C_TASK
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+  vaqt() {
+    const hozir = new Date(); //hozirgi vaqt
+    let soat = hozir.getHours().toString().padStart(2, "0"); // bu yerda soat 0 ni stringa aylantirib oladi
+    let minut = hozir.getMinutes().toString().padStart(2, "0"); // bu yerda esa minut yani 0 ni stiringa aylantirib oladi
+    return `${soat}:${minut}`;
+  }
+
+  qoldiq() {
+    console.log(
+      `Hozir ${this.vaqt()}da ${this.non}ta non ${this.lagmon}ta lagmon va ${
+        // bu yer esa hozir mahsulotlar qancha qolganini log qilinadi
+        this.cola
+      }ta cola mavjud`
+    );
+  }
+
+  sotish(mahsulot, soni) {
+    if (this[mahsulot] !== undefined) {
+      //bu yerda mahsulot bormi yoqmi
+      if (this[mahsulot] >= soni) {
+        //mahsulot bor bo'lsa
+        this[mahsulot] -= soni; //mahsulot oliib sonni kamaytiramiz
+        console.log(`${soni} ta ${mahsulot} sotildi`);
+      } else {
+        console.log(`${mahsulot} yetarli emas!`); // Agar kam log qiladi
+      }
+    } else {
+      console.log(`${mahsulot} do'konda yo'q`); //bu mahsulot yoq deb log qiladi
+    }
+  }
+
+  qabul(mahsulot, soni) {
+    if (this[mahsulot] !== undefined) {
+      //bu yerda mahsulot bormi yoqmi
+      this[mahsulot] += soni; // bu yerga sonni qo'shadi
+      console.log(`${soni}ta ${mahsulot} qabul qilindi`);
+    } else {
+      console.log(`${mahsulot} do'konda yo'q`);
+    }
+  }
+}
+
+const shop1 = new Shop(4, 5, 2);
+const shop2 = new Shop(3, 4, 2);
+const shop3 = new Shop(1, 1);
+shop1.qoldiq();
+shop2.sotish("non", 2);
+shop2.qabul("cola", 3);
+shop2.qabul();
