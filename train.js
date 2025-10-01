@@ -182,3 +182,23 @@ shop1.qoldiq();
 shop2.sotish("non", 2);
 shop2.qabul("cola", 3);
 shop2.qabul();
+shop2.sotish();
+
+/////////////////////////////////////////////////////
+//D_TASK
+
+function checkContent(mitgroup, gmtiprou) {
+  // bu yerda funksiya 2 ta parametr qabul qildi
+  if (mitgroup.length !== gmtiprou.length) {
+    // bu yerda esa birinchi va ikkinchi parmaeter bir xilmi bir xil emasligi tekshirildi
+    return false; // agar teng bo'lsa true bir xil bo'lmasa false qaytaradi
+  }
+  const sorted1 = mitgroup.split("").sort().join(""); // bu yerda parametrdagi string hamda valuelarni tartiblaydi
+  const sorted2 = gmtiprou.split("").sort().join(""); // bu yerda parametrdagi string hamda valuelarni tartiblaydi
+  return sorted1 === sorted2; // bu yerda tartiblangan stringlarni farqini tekshiradi
+}
+console.log(checkContent("mitgroup", "gmtiprou"));
+console.log(checkContent("test", "ttesd"));
+console.log(checkContent("jony", "jnoy"));
+console.log(checkContent("kattaro", "kattaroq"));
+console.log(checkContent("aslom", "salom"));
