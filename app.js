@@ -117,4 +117,3 @@ module.exports = app;
 //     alert(response.data.state);
 //     document.location.reload();
 //   });
-// });

@@ -202,3 +202,29 @@ console.log(checkContent("test", "ttesd"));
 console.log(checkContent("jony", "jnoy"));
 console.log(checkContent("kattaro", "kattaroq"));
 console.log(checkContent("aslom", "salom"));
+
+/////////////////////////////////////////////////
+//E_TASK
+
+// function toReverce(str) {
+//   let result = "";
+//   for (let i = str.lenhgt - 1; i >= 0; i--) {
+//     result += str[i];
+//   }
+//   return result;
+// }
+// console.log(toReverce("hello"));
+
+function getReverse(info) {
+  //bu yerda bitta sti=ring qaytaradigan parametr kiritdim
+  let result = ""; // har o'zgarish bo'lgan paytda bu belgini qo'shib beradi
+  for (let i = info.length - 1; i >= 0; i--) {
+    // bu yerda esa har kamaygan paytda elementni teskariga holatga qarab o'qiydi
+    result += info[i]; // bu har belgini resultga qo'shadi
+  }
+  return result; // bu stringni qaytarib beradi
+}
+
+console.log(getReverse("hello"));
+console.log(getReverse("Hayot"));
+console.log(getReverse("mitgroup"));
