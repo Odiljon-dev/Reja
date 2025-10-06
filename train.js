@@ -95,136 +95,159 @@
 // Xatolik bo‘lsa uni tutib olish uchun "try/catch" ishlatiladi
 
 //////////////////////////////////////////////////////
-function countLetter(e, engineer) {
-  let count = 0;
-  for (let i = 0; i <= engineer.length; i++) {
-    if (engineer[i] == e) {
-      count++;
-    }
-  }
-  return count;
-}
-
-// Misol:
-console.log(countLetter("e", "engineer"));
-
-////////////////////////////////
-//B-TASK
-function stringHisob(string) {
-  //B yerda funksiya orqali bitta "string" nomli parametr ochib oldim
-  let counter = 0; // Bu yerda variable counterni 0 ga tenglab oldim
-  for (let i = 0; i <= string.length; i++) {
-    // for sintaksisi bu yerdagi stringlarni ko'rib chiqadigan qildim ya'ni [i] ni
-    if (string[i] >= "0" && string[i] <= "9") {
-      // shart berdim agarda 9 strindan teng yoki katta bo'lsa hamda string 0 dan katta yoki teng bo'lsa
-      counter++; // uni 1 tadan qosh deb kiritdim
-    }
-  }
-  return counter; // Bu yerdagi raqamlarni tekshirib return qiladigan qildim
-}
-
-console.log(stringHisob("j0kx3v4v8vc2bv6vj9")); //log qilib funksiyani chaqirdim keyin natijani consolega chiqardim
-
-////////////////////////////////////////////////////////////
-//C_TASK
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
-  vaqt() {
-    const hozir = new Date(); //hozirgi vaqt
-    let soat = hozir.getHours().toString().padStart(2, "0"); // bu yerda soat 0 ni stringa aylantirib oladi
-    let minut = hozir.getMinutes().toString().padStart(2, "0"); // bu yerda esa minut yani 0 ni stiringa aylantirib oladi
-    return `${soat}:${minut}`;
-  }
-
-  qoldiq() {
-    console.log(
-      `Hozir ${this.vaqt()}da ${this.non}ta non ${this.lagmon}ta lagmon va ${
-        // bu yer esa hozir mahsulotlar qancha qolganini log qilinadi
-        this.cola
-      }ta cola mavjud`
-    );
-  }
-
-  sotish(mahsulot, soni) {
-    if (this[mahsulot] !== undefined) {
-      //bu yerda mahsulot bormi yoqmi
-      if (this[mahsulot] >= soni) {
-        //mahsulot bor bo'lsa
-        this[mahsulot] -= soni; //mahsulot oliib sonni kamaytiramiz
-        console.log(`${soni} ta ${mahsulot} sotildi`);
-      } else {
-        console.log(`${mahsulot} yetarli emas!`); // Agar kam log qiladi
-      }
-    } else {
-      console.log(`${mahsulot} do'konda yo'q`); //bu mahsulot yoq deb log qiladi
-    }
-  }
-
-  qabul(mahsulot, soni) {
-    if (this[mahsulot] !== undefined) {
-      //bu yerda mahsulot bormi yoqmi
-      this[mahsulot] += soni; // bu yerga sonni qo'shadi
-      console.log(`${soni}ta ${mahsulot} qabul qilindi`);
-    } else {
-      console.log(`${mahsulot} do'konda yo'q`);
-    }
-  }
-}
-
-const shop1 = new Shop(4, 5, 2);
-const shop2 = new Shop(3, 4, 2);
-const shop3 = new Shop(1, 1);
-shop1.qoldiq();
-shop2.sotish("non", 2);
-shop2.qabul("cola", 3);
-shop2.qabul();
-shop2.sotish();
-
-/////////////////////////////////////////////////////
-//D_TASK
-
-function checkContent(mitgroup, gmtiprou) {
-  // bu yerda funksiya 2 ta parametr qabul qildi
-  if (mitgroup.length !== gmtiprou.length) {
-    // bu yerda esa birinchi va ikkinchi parmaeter bir xilmi bir xil emasligi tekshirildi
-    return false; // agar teng bo'lsa true bir xil bo'lmasa false qaytaradi
-  }
-  const sorted1 = mitgroup.split("").sort().join(""); // bu yerda parametrdagi string hamda valuelarni tartiblaydi
-  const sorted2 = gmtiprou.split("").sort().join(""); // bu yerda parametrdagi string hamda valuelarni tartiblaydi
-  return sorted1 === sorted2; // bu yerda tartiblangan stringlarni farqini tekshiradi
-}
-console.log(checkContent("mitgroup", "gmtiprou"));
-console.log(checkContent("test", "ttesd"));
-console.log(checkContent("jony", "jnoy"));
-console.log(checkContent("kattaro", "kattaroq"));
-console.log(checkContent("aslom", "salom"));
-
-/////////////////////////////////////////////////
-//E_TASK
-
-// function toReverce(str) {
-//   let result = "";
-//   for (let i = str.lenhgt - 1; i >= 0; i--) {
-//     result += str[i];
+// function countLetter(e, engineer) {
+//   let count = 0;
+//   for (let i = 0; i <= engineer.length; i++) {
+//     if (engineer[i] == e) {
+//       count++;
+//     }
 //   }
-//   return result;
+//   return count;
 // }
-// console.log(toReverce("hello"));
 
-function getReverse(info) {
-  //bu yerda bitta sti=ring qaytaradigan parametr kiritdim
-  let result = ""; // har o'zgarish bo'lgan paytda bu belgini qo'shib beradi
-  for (let i = info.length - 1; i >= 0; i--) {
-    // bu yerda esa har kamaygan paytda elementni teskariga holatga qarab o'qiydi
-    result += info[i]; // bu har belgini resultga qo'shadi
+// // Misol:
+// console.log(countLetter("e", "engineer"));
+
+// ////////////////////////////////
+// //B-TASK
+// function stringHisob(string) {
+//   //B yerda funksiya orqali bitta "string" nomli parametr ochib oldim
+//   let counter = 0; // Bu yerda variable counterni 0 ga tenglab oldim
+//   for (let i = 0; i <= string.length; i++) {
+//     // for sintaksisi bu yerdagi stringlarni ko'rib chiqadigan qildim ya'ni [i] ni
+//     if (string[i] >= "0" && string[i] <= "9") {
+//       // shart berdim agarda 9 strindan teng yoki katta bo'lsa hamda string 0 dan katta yoki teng bo'lsa
+//       counter++; // uni 1 tadan qosh deb kiritdim
+//     }
+//   }
+//   return counter; // Bu yerdagi raqamlarni tekshirib return qiladigan qildim
+// }
+
+// console.log(stringHisob("j0kx3v4v8vc2bv6vj9")); //log qilib funksiyani chaqirdim keyin natijani consolega chiqardim
+
+// ////////////////////////////////////////////////////////////
+// //C_TASK
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
+//   vaqt() {
+//     const hozir = new Date(); //hozirgi vaqt
+//     let soat = hozir.getHours().toString().padStart(2, "0"); // bu yerda soat 0 ni stringa aylantirib oladi
+//     let minut = hozir.getMinutes().toString().padStart(2, "0"); // bu yerda esa minut yani 0 ni stiringa aylantirib oladi
+//     return `${soat}:${minut}`;
+//   }
+
+//   qoldiq() {
+//     console.log(
+//       `Hozir ${this.vaqt()}da ${this.non}ta non ${this.lagmon}ta lagmon va ${
+//         // bu yer esa hozir mahsulotlar qancha qolganini log qilinadi
+//         this.cola
+//       }ta cola mavjud`
+//     );
+//   }
+
+//   sotish(mahsulot, soni) {
+//     if (this[mahsulot] !== undefined) {
+//       //bu yerda mahsulot bormi yoqmi
+//       if (this[mahsulot] >= soni) {
+//         //mahsulot bor bo'lsa
+//         this[mahsulot] -= soni; //mahsulot oliib sonni kamaytiramiz
+//         console.log(`${soni} ta ${mahsulot} sotildi`);
+//       } else {
+//         console.log(`${mahsulot} yetarli emas!`); // Agar kam log qiladi
+//       }
+//     } else {
+//       console.log(`${mahsulot} do'konda yo'q`); //bu mahsulot yoq deb log qiladi
+//     }
+//   }
+
+//   qabul(mahsulot, soni) {
+//     if (this[mahsulot] !== undefined) {
+//       //bu yerda mahsulot bormi yoqmi
+//       this[mahsulot] += soni; // bu yerga sonni qo'shadi
+//       console.log(`${soni}ta ${mahsulot} qabul qilindi`);
+//     } else {
+//       console.log(`${mahsulot} do'konda yo'q`);
+//     }
+//   }
+// }
+
+// const shop1 = new Shop(4, 5, 2);
+// const shop2 = new Shop(3, 4, 2);
+// const shop3 = new Shop(1, 1);
+// shop1.qoldiq();
+// shop2.sotish("non", 2);
+// shop2.qabul("cola", 3);
+// shop2.qabul();
+// shop2.sotish();
+
+// /////////////////////////////////////////////////////
+// //D_TASK
+
+// function checkContent(mitgroup, gmtiprou) {
+//   // bu yerda funksiya 2 ta parametr qabul qildi
+//   if (mitgroup.length !== gmtiprou.length) {
+//     // bu yerda esa birinchi va ikkinchi parmaeter bir xilmi bir xil emasligi tekshirildi
+//     return false; // agar teng bo'lsa true bir xil bo'lmasa false qaytaradi
+//   }
+//   const sorted1 = mitgroup.split("").sort().join(""); // bu yerda parametrdagi string hamda valuelarni tartiblaydi
+//   const sorted2 = gmtiprou.split("").sort().join(""); // bu yerda parametrdagi string hamda valuelarni tartiblaydi
+//   return sorted1 === sorted2; // bu yerda tartiblangan stringlarni farqini tekshiradi
+// }
+// console.log(checkContent("mitgroup", "gmtiprou"));
+// console.log(checkContent("test", "ttesd"));
+// console.log(checkContent("jony", "jnoy"));
+// console.log(checkContent("kattaro", "kattaroq"));
+// console.log(checkContent("aslom", "salom"));
+
+// /////////////////////////////////////////////////
+// //E_TASK
+
+// // function toReverce(str) {
+// //   let result = "";
+// //   for (let i = str.lenhgt - 1; i >= 0; i--) {
+// //     result += str[i];
+// //   }
+// //   return result;
+// // }
+// // console.log(toReverce("hello"));
+
+// function getReverse(info) {
+//   //bu yerda bitta sti=ring qaytaradigan parametr kiritdim
+//   let result = ""; // har o'zgarish bo'lgan paytda bu belgini qo'shib beradi
+//   for (let i = info.length - 1; i >= 0; i--) {
+//     // bu yerda esa har kamaygan paytda elementni teskariga holatga qarab o'qiydi
+//     result += info[i]; // bu har belgini resultga qo'shadi
+//   }
+//   return result; // bu stringni qaytarib beradi
+// }
+
+// console.log(getReverse("hello"));
+// console.log(getReverse("Hayot"));
+// console.log(getReverse("mitgroup"));
+/////////////////////////////////////////////
+//F_TASK
+
+function findDoublers(str) {
+  // bu str nomli bitta parametr tuzib oldim
+  let i = {}; //. bu yerda esa bitta bo'sh obyekt yaratib olib
+  for (let info of str) {
+    // parametr ichidagi har bir belgini info yordamida ushlab oladi
+    if (i[info]) {
+      // agarda bir xil belgi oldin ham qatnashgan bo'lsa true qiymatini qaytar
+      return true;
+    } else {
+      i[info] = true; // bu yerda har belgini aylganda eslab qoladi agar bir xil belgi kelmsa aylanib chiqadi ketma ket kelib qolsa true qiymatini qaytaradi
+    }
   }
-  return result; // bu stringni qaytarib beradi
+  return false; // bu yerda esa aylanib chiqganda bir xil takroran uchramasa false qiymatini chiqaradi
 }
 
-console.log(getReverse("hello"));
-console.log(getReverse("Hayot"));
-console.log(getReverse("mitgroup"));
+console.log(findDoublers("hello"));
+console.log(findDoublers("abc"));
+console.log(findDoublers("addresss"));
+console.log(findDoublers("telefon"));
+console.log(findDoublers("bmw"));
